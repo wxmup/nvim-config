@@ -1,0 +1,17 @@
+# common
+.DS_Store
+*.swp
+*.swo
+
+# if you use lazy.nvim
+/lazy-lock.json.bak
+/lua/**/.luarc.json
+
+# if you keep plugins/data in stdpath("data") generally it's NOT in ~/.config/nvim
+# but some setups may put generated stuff here; ignore if present:
+# /plugin/
+/site/
+/pack/
+
+# if you have local secrets
+/secrets.lua
