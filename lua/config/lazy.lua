@@ -15,6 +15,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- 定义lazyfile的配置
+local ent = require("lazy.core.handler.event")
+ent.mappings.LazyFile = {
+	id = "LazyFile",
+	event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+}
+
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {

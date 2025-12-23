@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		branch = "main",
-		lazy = false, -- 不支持 lazy-loading
+		event = "LazyFile",
 		build = ":TSUpdate", -- 升级时同步 parser
 
 		config = function()
@@ -130,8 +130,8 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 
-		-- 懒加载设置
-		event = { "BufReadPost", "BufNewFile", "BufWritePost" },
+		event = "LazyFile",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 
 		opts = {
 			enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -154,7 +154,10 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		branch = "main",
-		event = "VeryLazy",
+
+		event = "LazyFile",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+
 		opts = {
 			move = {
 				enable = true,

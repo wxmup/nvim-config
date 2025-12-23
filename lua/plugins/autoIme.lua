@@ -1,7 +1,7 @@
 -- 进入普通模式时切换到英文输入法。
 return {
 	"keaising/im-select.nvim",
-	event = "VeryLazy",
+	event = "LazyFile",
 	opts = {
 		default_im_select = "keyboard-us",
 
